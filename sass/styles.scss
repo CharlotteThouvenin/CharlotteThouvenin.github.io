@@ -69,6 +69,7 @@ header {
     font-size: 16px;
     font-weight: 500;
     background-color: #EAEAEA;
+    padding: 20px;
 
     i {
         padding-right: 15px;
@@ -195,8 +196,14 @@ header {
             border-radius: 15px;
             box-sizing: border-box;
 
+            .image{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
             img{
-                height: 231px;
+                height: 180px;
                 width: 100%;
                 object-fit: cover;
                 border-top-left-radius: 15px;
@@ -213,13 +220,30 @@ header {
                 border-radius: 2px;
                 justify-content: center;
                 position: absolute;
-                margin-left: 0;
-                margin-bottom: 0;
+                margin: 10px;
              }
             
              .card-content{
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+
+                .card-text{
+                    h4{
+                        font-size: 18px;
+                        font-weight: bolder;
+                        margin: 0;
+                    }
+                    p{
+                        font-size: 17px;
+                        font-weight: 300;
+                    }
+                }
+                .card-heart{
+
+                }
              }
         }
     }
