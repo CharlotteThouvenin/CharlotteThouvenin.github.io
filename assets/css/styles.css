@@ -20,6 +20,12 @@ h3 {
   margin: 0;
 }
 
+h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
 p {
   margin: 0;
 }
@@ -204,11 +210,6 @@ header h1 {
   align-items: center;
   padding: 10px;
 }
-.restaurants .restaurants-cards .card .card-content .card-text h4 {
-  font-size: 18px;
-  font-weight: bolder;
-  margin: 0;
-}
 .restaurants .restaurants-cards .card .card-content .card-text p {
   font-size: 17px;
   font-weight: 300;
@@ -216,8 +217,63 @@ header h1 {
 
 /******************* Styles page restaurants *******************/
 .pages-restaurants img {
-  width: 375px;
+  width: 100%;
   height: 275px;
+  object-fit: cover;
+}
+.pages-restaurants .menu {
+  margin: -40px 0px 0px 0px;
+  border-radius: 40px 40px 0px 0px;
+  position: relative;
+  z-index: 1;
+  background-color: #F6F6F6;
+}
+.pages-restaurants .menu .titre-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pages-restaurants .menu .titre-menu h2 {
+  font-family: shrikhand, serif;
+  font-size: 28px;
+  font-style: italic;
+  padding: 20px;
+  margin-bottom: 0;
+}
+.pages-restaurants .menu .titre-menu .card-heart {
+  font-size: 21px;
+  font-weight: lighter;
+  padding: 20px 30px 20px 20px;
+}
+.pages-restaurants .menu .menu-part {
+  padding: 20px;
+}
+.pages-restaurants .menu .menu-part .titre-menu-part {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.pages-restaurants .menu .menu-part .titre-menu-part span {
+  border-bottom: solid 3px #99E2D0;
+  padding-bottom: 5px;
+}
+.pages-restaurants .menu .menu-part .plat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-radius: 15px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  background-color: white;
+  width: 100%;
+  height: 69px;
+}
+.pages-restaurants .menu .menu-part .plat .plat-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
 }
 
 /**** Footer ****/
