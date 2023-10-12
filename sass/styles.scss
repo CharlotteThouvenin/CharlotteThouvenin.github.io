@@ -118,7 +118,7 @@ header {
         height: 50px;
         border-radius: 25px;
         background: linear-gradient(193.33deg, $purple -11.44%, #FF79DA 123.93%);
-        @include card-shadow()
+        @include card-shadow();
         display: flex;
         align-items: center;
         justify-content: center;
