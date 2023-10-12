@@ -1,16 +1,16 @@
 /******** Variables *******/
 
-$purple:#9356DC;
-$green-light:#99E2D0;
+$purple: #9356DC;
+$green-light: #99E2D0;
 $grey-light: #F6F6F6;
-$grey-dark:#353535;
+$grey-dark: #353535;
 /******** Mixins *******/
 
-@mixin card-shadow{
+@mixin card-shadow {
     box-shadow: 0px 2px 4px 0px #00000026;
 }
 
-@mixin card-radius{
+@mixin card-radius {
     border-radius: 15px;
 }
 
@@ -34,14 +34,14 @@ h3 {
     margin: 0;
 }
 
-h4{
-    margin:0;
+h4 {
+    margin: 0;
     font-size: 18px;
     font-weight: bolder;
 }
 
-p{
-    margin:0;
+p {
+    margin: 0;
 }
 
 /**** Header ****/
@@ -51,7 +51,7 @@ header {
     justify-content: center;
     height: 63px;
     align-items: center;
-    
+
 
     i {
         padding: 17px;
@@ -140,7 +140,7 @@ header {
     height: 440px;
     box-sizing: border-box;
     padding: 48px 20px;
-    background-color:white;
+    background-color: white;
 
     .les3etapes {
         height: 280px;
@@ -153,7 +153,7 @@ header {
             display: flex;
             flex-direction: row;
             align-items: center;
-            
+
 
             .etape-number {
                 display: flex;
@@ -187,7 +187,8 @@ header {
                     background-color: inherit;
                     padding: 0px 30px;
                 }
-                p{
+
+                p {
                     font-size: 16px;
                     font-weight: 500;
                 }
@@ -198,17 +199,17 @@ header {
 
 /**** Section restaurants ****/
 
-.restaurants{
+.restaurants {
     padding: 48px 20px;
 
-    .restaurants-cards{
+    .restaurants-cards {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         align-items: center;
-        gap:18px;
+        gap: 18px;
         margin-top: 20px;
 
-        .card{
+        .card {
             display: flex;
             flex-direction: column;
             background-color: white;
@@ -216,21 +217,21 @@ header {
             @include card-radius();
             box-sizing: border-box;
 
-            .image{
+            .image {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-end;
             }
 
-            img{
+            img {
                 height: 180px;
                 width: 100%;
                 object-fit: cover;
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
-             }
+            }
 
-             .nouveau{
+            .nouveau {
                 display: flex;
                 align-items: center;
                 width: 80px;
@@ -241,23 +242,23 @@ header {
                 justify-content: center;
                 position: absolute;
                 margin: 10px;
-             }
-            
-             .card-content{
+            }
+
+            .card-content {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
                 padding: 10px;
 
-                .card-text{
-                    
-                    p{
+                .card-text {
+
+                    p {
                         font-size: 17px;
                         font-weight: 300;
                     }
-                 }
-             }
+                }
+            }
         }
     }
 }
@@ -266,74 +267,105 @@ header {
 /******************* Styles page restaurants *******************/
 
 
-.pages-restaurants{
+.pages-restaurants {
 
-    img{
+    img {
         width: 100%;
         height: 275px;
         object-fit: cover;
     }
 
-    .menu{
+    .menu {
         margin: -40px 0px 0px 0px;
         border-radius: 40px 40px 0px 0px;
+        padding: 20px;
         position: relative;
         z-index: 1;
         background-color: $grey-light;
 
-        .titre-menu{
+        .titre-menu {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-top: 20px;
 
-            h2{
-                font-family: shrikhand ,serif;
+            h2 {
+                font-family: shrikhand, serif;
                 font-size: 28px;
                 font-style: italic;
-                padding: 20px;
-                margin-bottom: 0;
-                
+                margin: 0;
+
             }
 
-            .card-heart{
+            .card-heart {
                 font-size: 21px;
                 font-weight: lighter;
-                padding: 20px 30px 20px 20px;
+                padding-right: 10px;
             }
         }
-        .menu-part{
-            padding: 20px;
-            .titre-menu-part{
-                font-size: 16px;
-                font-weight: 300;
-                margin-bottom: 20px;
-                span{
-                    border-bottom: solid 3px $green-light;
-                    padding-bottom: 5px;
-                }
+
+        .titre-menu-part {
+            font-size: 16px;
+            font-weight: 300;
+            margin: 20px 0px;
+            span {
+                border-bottom: solid 3px $green-light;
+                padding-bottom: 5px;
             }
-            .plat{
+        }
+    }
+
+    .menu-part {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap:10px;
+
+        .plat {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            @include card-radius();
+            @include card-shadow();
+            background-color: white;
+            width: 100%;
+            height: 69px;
+
+            .plat-text {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-end;
-                @include card-radius();
-                @include card-shadow();
-                background-color: white;
+                padding: 10px;
                 width: 100%;
-                height: 69px;
-
-                .plat-text{
+                .plat-nom{
                     display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    padding: 10px;
-                    width: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
                 }
+            }
+            .check{
+                display: flex;
+                justify-content: center;
+                width: 59px;
+                height: 69px;
+                border-radius: 0px 15px 15px 0px;
+                background-color: $green-light;
+                color: white;
+                text-align: center;
+                align-items: center;
+
+                i{
+                    font-size: 20px;
+                }
+
+                display: none;
             }
         }
     }
 }
+
 
 /**** Footer ****/
 footer {

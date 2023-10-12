@@ -224,6 +224,7 @@ header h1 {
 .pages-restaurants .menu {
   margin: -40px 0px 0px 0px;
   border-radius: 40px 40px 0px 0px;
+  padding: 20px;
   position: relative;
   z-index: 1;
   background-color: #F6F6F6;
@@ -232,48 +233,72 @@ header h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
 }
 .pages-restaurants .menu .titre-menu h2 {
   font-family: shrikhand, serif;
   font-size: 28px;
   font-style: italic;
-  padding: 20px;
-  margin-bottom: 0;
+  margin: 0;
 }
 .pages-restaurants .menu .titre-menu .card-heart {
   font-size: 21px;
   font-weight: lighter;
-  padding: 20px 30px 20px 20px;
+  padding-right: 10px;
 }
-.pages-restaurants .menu .menu-part {
-  padding: 20px;
-}
-.pages-restaurants .menu .menu-part .titre-menu-part {
+.pages-restaurants .menu .titre-menu-part {
   font-size: 16px;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
-.pages-restaurants .menu .menu-part .titre-menu-part span {
+.pages-restaurants .menu .titre-menu-part span {
   border-bottom: solid 3px #99E2D0;
   padding-bottom: 5px;
 }
-.pages-restaurants .menu .menu-part .plat {
+.pages-restaurants .menu-part {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.pages-restaurants .menu-part .plat {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-end;
   border-radius: 15px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   background-color: white;
   width: 100%;
   height: 69px;
 }
-.pages-restaurants .menu .menu-part .plat .plat-text {
+.pages-restaurants .menu-part .plat .plat-text {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
   padding: 10px;
   width: 100%;
+}
+.pages-restaurants .menu-part .plat .plat-text .plat-nom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.pages-restaurants .menu-part .plat .check {
+  display: flex;
+  justify-content: center;
+  width: 59px;
+  height: 69px;
+  border-radius: 0px 15px 15px 0px;
+  background-color: #99E2D0;
+  color: white;
+  text-align: center;
+  align-items: center;
+  display: none;
+}
+.pages-restaurants .menu-part .plat .check i {
+  font-size: 20px;
 }
 
 /**** Footer ****/
