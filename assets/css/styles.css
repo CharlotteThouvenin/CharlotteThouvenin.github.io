@@ -224,7 +224,7 @@ header h1 {
 .pages-restaurants .menu {
   margin: -40px 0px 0px 0px;
   border-radius: 40px 40px 0px 0px;
-  padding: 20px;
+  padding: 10px;
   position: relative;
   z-index: 1;
   background-color: #F6F6F6;
@@ -263,29 +263,37 @@ header h1 {
 .pages-restaurants .menu-part .plat {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   border-radius: 15px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   background-color: white;
   width: 100%;
   height: 69px;
+  box-sizing: border-box;
 }
-.pages-restaurants .menu-part .plat .plat-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 10px;
-  width: 100%;
-}
-.pages-restaurants .menu-part .plat .plat-text .plat-nom {
+.pages-restaurants .menu-part .plat .plat-nom {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  gap: 5px;
+  padding: 12px;
 }
-.pages-restaurants .menu-part .plat .check {
+.pages-restaurants .menu-part .plat .plat-nom h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.pages-restaurants .menu-part .plat .plat-nom p {
+  font-size: 15px;
+  font-weight: 300;
+}
+.pages-restaurants .menu-part .plat .prix-icon .prix {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px;
+}
+.pages-restaurants .menu-part .plat .prix-icon .check {
   display: flex;
   justify-content: center;
   width: 59px;
@@ -297,7 +305,7 @@ header h1 {
   align-items: center;
   display: none;
 }
-.pages-restaurants .menu-part .plat .check i {
+.pages-restaurants .menu-part .plat .prix-icon .check i {
   font-size: 20px;
 }
 

@@ -278,7 +278,7 @@ header {
     .menu {
         margin: -40px 0px 0px 0px;
         border-radius: 40px 40px 0px 0px;
-        padding: 20px;
+        padding: 10px;
         position: relative;
         z-index: 1;
         background-color: $grey-light;
@@ -308,6 +308,7 @@ header {
             font-size: 16px;
             font-weight: 300;
             margin: 20px 0px;
+
             span {
                 border-bottom: solid 3px $green-light;
                 padding-bottom: 5px;
@@ -318,49 +319,62 @@ header {
     .menu-part {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
-        gap:10px;
+        gap: 10px;
 
         .plat {
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
             @include card-radius();
             @include card-shadow();
             background-color: white;
             width: 100%;
             height: 69px;
+            box-sizing: border-box;
 
-            .plat-text {
+            .plat-nom {
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-end;
-                padding: 10px;
-                width: 100%;
-                .plat-nom{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 5px;
+                padding: 12px;
+
+                h4{
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                p{
+                    font-size: 15px;
+                    font-weight: 300;
                 }
             }
-            .check{
-                display: flex;
-                justify-content: center;
-                width: 59px;
-                height: 69px;
-                border-radius: 0px 15px 15px 0px;
-                background-color: $green-light;
-                color: white;
-                text-align: center;
-                align-items: center;
 
-                i{
-                    font-size: 20px;
+            .prix-icon{
+                .prix{
+                    font-size: 15px;
+                    font-weight: 700;
+                    padding: 12px;
                 }
-
-                display: none;
+    
+                .check {
+                    display: flex;
+                    justify-content: center;
+                    width: 59px;
+                    height: 69px;
+                    border-radius: 0px 15px 15px 0px;
+                    background-color: $green-light;
+                    color: white;
+                    text-align: center;
+                    align-items: center;
+    
+                    i {
+                        font-size: 20px;
+                    }
+    
+                    display: none;
+                }
             }
         }
     }
