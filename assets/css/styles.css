@@ -30,6 +30,21 @@ p {
   margin: 0;
 }
 
+.purple-button {
+  width: 218px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500px;
+  font-size: 16px;
+  border: 0px transparent;
+}
+
 /**** Header ****/
 header {
   display: flex;
@@ -37,6 +52,7 @@ header {
   justify-content: center;
   height: 63px;
   align-items: center;
+  background-color: white;
 }
 header i {
   padding: 17px;
@@ -91,21 +107,8 @@ header h1 {
   font-weight: 300;
   text-align: center;
 }
-.reserver-et-explorer a {
-  width: 218px;
-  height: 50px;
-  border-radius: 25px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 500px;
-  font-size: 16px;
-}
 
-/**** Section Réserver et explorer ****/
+/**** Section Fontionnement ****/
 .fonctionnement {
   height: 440px;
   box-sizing: border-box;
@@ -216,6 +219,15 @@ header h1 {
 }
 
 /******************* Styles page restaurants *******************/
+.pages-restaurants {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pages-restaurants .purple-button {
+  margin: 30px 0px;
+  border: none;
+}
 .pages-restaurants img {
   width: 100%;
   height: 275px;
@@ -228,6 +240,8 @@ header h1 {
   position: relative;
   z-index: 1;
   background-color: #F6F6F6;
+  width: 100%;
+  box-sizing: border-box;
 }
 .pages-restaurants .menu .titre-menu {
   display: flex;
@@ -249,7 +263,7 @@ header h1 {
 .pages-restaurants .menu .titre-menu-part {
   font-size: 16px;
   font-weight: 300;
-  margin: 20px 0px;
+  margin: 30px 0px 20px 0px;
 }
 .pages-restaurants .menu .titre-menu-part span {
   border-bottom: solid 3px #99E2D0;
