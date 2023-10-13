@@ -352,19 +352,21 @@ header {
                 align-items: flex-start;
                 gap: 5px;
                 padding: 12px;
-                /**white-space: nowrap;
-                text-overflow: hidden;**/
 
 
-                h4{
+                h4 {
                     font-size: 18px;
                     font-weight: 500;
+
                 }
-                p{
+                
+                p {
                     font-size: 15px;
                     font-weight: 300;
                 }
+
             }
+
 
             .prix-icon{
                 display: flex;

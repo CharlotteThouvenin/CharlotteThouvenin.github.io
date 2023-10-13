@@ -291,8 +291,6 @@ header h1 {
   align-items: flex-start;
   gap: 5px;
   padding: 12px;
-  /**white-space: nowrap;
-  text-overflow: hidden;**/
 }
 .pages-restaurants .menu-part .plat .plat-nom h4 {
   font-size: 18px;
