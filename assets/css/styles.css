@@ -252,7 +252,6 @@ header h1 {
 .pages-restaurants .menu .titre-menu h2 {
   font-family: shrikhand, serif;
   font-size: 28px;
-  font-style: italic;
   margin: 0;
 }
 .pages-restaurants .menu .titre-menu .card-heart {
@@ -282,7 +281,6 @@ header h1 {
   border-radius: 15px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   background-color: white;
-  width: 100%;
   height: 69px;
   box-sizing: border-box;
 }
@@ -293,6 +291,8 @@ header h1 {
   align-items: flex-start;
   gap: 5px;
   padding: 12px;
+  /**white-space: nowrap;
+  text-overflow: hidden;**/
 }
 .pages-restaurants .menu-part .plat .plat-nom h4 {
   font-size: 18px;
@@ -301,6 +301,11 @@ header h1 {
 .pages-restaurants .menu-part .plat .plat-nom p {
   font-size: 15px;
   font-weight: 300;
+}
+.pages-restaurants .menu-part .plat .prix-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
 .pages-restaurants .menu-part .plat .prix-icon .prix {
   font-size: 15px;
