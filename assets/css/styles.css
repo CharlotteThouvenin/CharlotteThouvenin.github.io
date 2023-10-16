@@ -4,26 +4,22 @@
 /**** Général *****/
 body {
   font-family: roboto, sans-serif;
+  color: black;
   margin: 0;
   background: #F6F6F6;
 }
 
+/*mise en forme des liens par défault*/
 a {
   text-decoration: none;
   color: inherit;
 }
 
-h3 {
-  font-size: 24px;
+h2 {
   font-weight: 700;
-  color: #000000;
+  font-size: 24px;
   margin: 0;
-}
-
-h4 {
   margin: 0;
-  font-size: 18px;
-  font-weight: bolder;
 }
 
 p {
@@ -46,6 +42,31 @@ p {
 }
 
 /**** Header ****/
+/**header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 63px;
+    align-items: center;
+    background-color: white;
+    position: relative;
+
+
+    .header__link {
+        padding: 17px 0px 17px 17px;
+        font-size: 17px;
+        color: #101010;
+        position: absolute;
+        transform: translateY(-23px);
+    }
+
+    .header__title {
+        font-family: Shrikhand, serif;
+        font-size: 30px;
+        font-style: italic;
+        text-align: center;
+    }
+}**/
 header {
   display: flex;
   flex-direction: row;
@@ -53,22 +74,26 @@ header {
   height: 63px;
   align-items: center;
   background-color: white;
+  position: relative;
 }
 header i {
   padding: 17px;
   font-size: 17px;
   color: #101010;
+  position: absolute;
+  transform: translateY(-23px);
 }
 header h1 {
-  font-family: Shrikhand, serif;
-  font-size: 30px;
+  font-family: shrikhand, serif;
   font-style: italic;
+  margin: 0;
+  font-size: 30px;
   text-align: center;
   width: 100%;
 }
 
 /* Spécificité header page d'accueil */
-.body-index header i {
+.body-index .header__link {
   display: none;
 }
 
@@ -80,10 +105,11 @@ header h1 {
   justify-content: center;
   align-items: center;
   color: #353535;
-  font-size: 16px;
-  font-weight: 500;
   background-color: #EAEAEA;
   padding: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
 }
 .localisation i {
   padding-right: 15px;
@@ -96,16 +122,21 @@ header h1 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 42px;
   box-sizing: border-box;
-}
-.reserver-et-explorer h3 {
   text-align: center;
+  padding: 40px 0;
+}
+.reserver-et-explorer h2 {
+  padding: 0px 42px;
 }
 .reserver-et-explorer p {
+  font-weight: lighter;
   font-size: 18px;
-  font-weight: 300;
-  text-align: center;
+  margin: 0;
+  padding: 20px 34px;
+}
+.reserver-et-explorer a {
+  margin: 20px Opx;
 }
 
 /**** Section Fontionnement ****/
@@ -115,19 +146,19 @@ header h1 {
   padding: 48px 20px;
   background-color: white;
 }
-.fonctionnement .les3etapes {
+.fonctionnement__processus {
   height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-top: 30px;
 }
-.fonctionnement .les3etapes .etape-fonctionnement {
+.fonctionnement__processus__etape {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.fonctionnement .les3etapes .etape-fonctionnement .etape-number {
+.fonctionnement__processus__etape__numero {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,13 +167,13 @@ header h1 {
   color: #ffffff;
   width: 24px;
   height: 24px;
+  font-weight: 500px;
   font-size: 14px;
-  font-weight: 500;
-  margin-left: 10px;
+  margin: 0;
   z-index: 1;
   position: absolute;
 }
-.fonctionnement .les3etapes .etape-fonctionnement .etape-fonctionnement-content {
+.fonctionnement__processus__etape__contenu {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -151,30 +182,36 @@ header h1 {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   width: 335px;
   height: 72.38px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
-.fonctionnement .les3etapes .etape-fonctionnement .etape-fonctionnement-content i {
+.fonctionnement__processus__etape__contenu i {
   color: #7E7E7E;
   background-color: inherit;
   padding: 0px 30px;
 }
-.fonctionnement .les3etapes .etape-fonctionnement .etape-fonctionnement-content p {
-  font-size: 16px;
+.fonctionnement__processus__etape__contenu__text h4 {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+}
+.fonctionnement__processus__etape__contenu__text p {
   font-weight: 500;
+  font-size: 16px;
+  margin: 0;
 }
 
 /**** Section restaurants ****/
 .restaurants {
   padding: 48px 20px;
 }
-.restaurants .restaurants-cards {
+.restaurants .restaurants__cards {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: center;
   gap: 18px;
   margin-top: 20px;
 }
-.restaurants .restaurants-cards .card {
+.restaurants .restaurants__cards .card {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -182,19 +219,19 @@ header h1 {
   border-radius: 15px;
   box-sizing: border-box;
 }
-.restaurants .restaurants-cards .card .image {
+.restaurants .restaurants__cards .card__image {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
-.restaurants .restaurants-cards .card img {
+.restaurants .restaurants__cards .card__image img {
   height: 180px;
   width: 100%;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.restaurants .restaurants-cards .card .nouveau {
+.restaurants .restaurants__cards .card__image__nouveau {
   display: flex;
   align-items: center;
   width: 80px;
@@ -206,34 +243,40 @@ header h1 {
   position: absolute;
   margin: 10px;
 }
-.restaurants .restaurants-cards .card .card-content {
+.restaurants .restaurants__cards .card__contenu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
-.restaurants .restaurants-cards .card .card-content .card-text p {
-  font-size: 17px;
+.restaurants .restaurants__cards .card__contenu__text h4 {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+}
+.restaurants .restaurants__cards .card__contenu__text p {
   font-weight: 300;
+  font-size: 17px;
+  margin: 0;
 }
 
 /******************* Styles page restaurants *******************/
-.pages-restaurants {
+.page__restaurants {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.pages-restaurants .purple-button {
+.page__restaurants .purple-button {
   margin: 30px 0px;
   border: none;
 }
-.pages-restaurants img {
+.page__restaurants img {
   width: 100%;
   height: 275px;
   object-fit: cover;
 }
-.pages-restaurants .menu {
+.page__restaurants .menu {
   margin: -40px 0px 0px 0px;
   border-radius: 40px 40px 0px 0px;
   padding: 10px;
@@ -243,37 +286,40 @@ header h1 {
   width: 100%;
   box-sizing: border-box;
 }
-.pages-restaurants .menu .titre-menu {
+.page__restaurants .menu__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 20px;
 }
-.pages-restaurants .menu .titre-menu h2 {
+.page__restaurants .menu__title h1 {
   font-family: shrikhand, serif;
-  font-size: 28px;
+  font-style: italic;
   margin: 0;
+  font-size: 28px;
+  text-align: left;
 }
-.pages-restaurants .menu .titre-menu .card-heart {
+.page__restaurants .menu__title__coeur {
   font-size: 21px;
   font-weight: lighter;
   padding-right: 10px;
 }
-.pages-restaurants .menu .titre-menu-part {
+.page__restaurants .menu__subtitle {
+  font-weight: lighter;
   font-size: 16px;
-  font-weight: 300;
+  margin: 0;
   margin: 30px 0px 20px 0px;
 }
-.pages-restaurants .menu .titre-menu-part span {
+.page__restaurants .menu__subtitle span {
   border-bottom: solid 3px #99E2D0;
   padding-bottom: 5px;
 }
-.pages-restaurants .menu-part {
+.page__restaurants .menu__category {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 10px;
 }
-.pages-restaurants .menu-part .plat {
+.page__restaurants .menu__category__plat {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -284,7 +330,7 @@ header h1 {
   height: 69px;
   box-sizing: border-box;
 }
-.pages-restaurants .menu-part .plat .plat-nom {
+.page__restaurants .menu__category__plat__nom {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -292,25 +338,28 @@ header h1 {
   gap: 5px;
   padding: 12px;
 }
-.pages-restaurants .menu-part .plat .plat-nom h4 {
-  font-size: 18px;
+.page__restaurants .menu__category__plat__nom h4 {
   font-weight: 500;
+  font-size: 18px;
+  margin: 0;
 }
-.pages-restaurants .menu-part .plat .plat-nom p {
-  font-size: 15px;
+.page__restaurants .menu__category__plat__nom p {
   font-weight: 300;
+  font-size: 15px;
+  margin: 0;
 }
-.pages-restaurants .menu-part .plat .prix-icon {
+.page__restaurants .menu__category__plat__prixicon {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
-.pages-restaurants .menu-part .plat .prix-icon .prix {
-  font-size: 15px;
+.page__restaurants .menu__category__plat__prixicon__prix {
   font-weight: 700;
+  font-size: 15px;
+  margin: 0;
   padding: 12px;
 }
-.pages-restaurants .menu-part .plat .prix-icon .check {
+.page__restaurants .menu__category__plat__prixicon__icon {
   display: flex;
   justify-content: center;
   width: 59px;
@@ -322,12 +371,12 @@ header h1 {
   align-items: center;
   display: none;
 }
-.pages-restaurants .menu-part .plat .prix-icon .check i {
+.page__restaurants .menu__category__plat__prixicon__icon i {
   font-size: 20px;
 }
 
 /**** Footer ****/
-footer {
+.footer {
   background-color: #353535;
   display: flex;
   flex-direction: column;
@@ -335,26 +384,28 @@ footer {
   color: white;
   padding: 22px 25px;
 }
-footer h1 {
-  font-family: Shrikhand, serif;
-  margin: 0;
-  font-weight: 400;
+.footer__title {
+  font-family: shrikhand, serif;
   font-style: italic;
+  margin: 0;
   font-size: 18px;
+  text-align: left;
   padding-bottom: 12px;
 }
-footer .footer-part {
+.footer__part {
   margin: 0;
   font-size: 16px;
   padding-top: 7px;
+  height: 20px;
 }
-footer .footer-part a {
+.footer__part a {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  padding-top: 7px;
 }
-footer .footer-part a i {
+.footer__part a i {
   padding-right: 10px;
 }
 

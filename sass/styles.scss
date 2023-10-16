@@ -4,7 +4,18 @@ $purple: #9356DC;
 $green-light: #99E2D0;
 $grey-light: #F6F6F6;
 $grey-dark: #353535;
+$text-color: black;
+
+$purple-gradient: linear-gradient(193.33deg, $purple -11.44%, #FF79DA 123.93%);
+
 /******** Mixins *******/
+
+
+@mixin text-style ($font-size, $font-weight){
+    font-weight: $font-weight;
+    font-size: $font-size;
+    margin: 0;
+}
 
 @mixin card-shadow {
     box-shadow: 0px 2px 4px 0px #00000026;
@@ -14,42 +25,43 @@ $grey-dark: #353535;
     border-radius: 15px;
 }
 
-
+@mixin logo ($font-size, $text-align){
+    font-family: shrikhand, serif;
+    font-style:italic;
+    margin: 0;
+    font-size: $font-size;
+    text-align: $text-align;
+}
 
 /**** Général *****/
+
 body {
     font-family: roboto, sans-serif;
+    color: black;
     margin: 0;
     background: $grey-light;
 }
 
+/*mise en forme des liens par défault*/
 a {
     text-decoration: none;
     color: inherit;
 }
 
-h3 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #000000;
-    margin: 0;
+h2{
+    @include text-style(24px, 700);
+    margin:0;
 }
 
-h4 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bolder;
+p{
+    margin:0;
 }
 
-p {
-    margin: 0;
-}
-
-.purple-button{
+.purple-button {
     width: 218px;
     height: 50px;
     border-radius: 25px;
-    background: linear-gradient(193.33deg, $purple -11.44%, #FF79DA 123.93%);
+    background: $purple-gradient;
     @include card-shadow();
     display: flex;
     align-items: center;
@@ -61,6 +73,33 @@ p {
 }
 
 /**** Header ****/
+
+/**header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 63px;
+    align-items: center;
+    background-color: white;
+    position: relative;
+
+
+    .header__link {
+        padding: 17px 0px 17px 17px;
+        font-size: 17px;
+        color: #101010;
+        position: absolute;
+        transform: translateY(-23px);
+    }
+
+    .header__title {
+        font-family: Shrikhand, serif;
+        font-size: 30px;
+        font-style: italic;
+        text-align: center;
+    }
+}**/
+
 header {
     display: flex;
     flex-direction: row;
@@ -68,19 +107,19 @@ header {
     height: 63px;
     align-items: center;
     background-color: white;
+    position: relative;
 
 
     i {
         padding: 17px;
         font-size: 17px;
         color: #101010;
+        position: absolute;
+        transform: translateY(-23px);
     }
 
     h1 {
-        font-family: Shrikhand, serif;
-        font-size: 30px;
-        font-style: italic;
-        text-align: center;
+        @include logo(30px, center);
         width: 100%;
     }
 }
@@ -88,10 +127,11 @@ header {
 /* Spécificité header page d'accueil */
 
 .body-index {
-    header {
-        i {
+    .header {
+        &__link{
             display: none;
         }
+        
     }
 }
 
@@ -105,10 +145,9 @@ header {
     justify-content: center;
     align-items: center;
     color: #353535;
-    font-size: 16px;
-    font-weight: 500;
     background-color: #EAEAEA;
     padding: 20px;
+    @include text-style(16px, 500);
 
     i {
         padding-right: 15px;
@@ -122,17 +161,20 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 42px;
     box-sizing: border-box;
+    text-align: center;
+    padding: 40px 0;
 
-    h3 {
-        text-align: center;
+    h2{
+        padding: 0px 42px;
+    }
+    p {
+        @include text-style(18px, lighter);
+        padding:20px 34px;
     }
 
-    p {
-        font-size: 18px;
-        font-weight: 300;
-        text-align: center;
+    a{
+        margin:20px Opx;
     }
 }
 
@@ -145,20 +187,20 @@ header {
     padding: 48px 20px;
     background-color: white;
 
-    .les3etapes {
+    &__processus {
         height: 280px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding-top: 30px;
 
-        .etape-fonctionnement {
+        &__etape {
             display: flex;
             flex-direction: row;
             align-items: center;
 
 
-            .etape-number {
+            &__numero {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -167,14 +209,12 @@ header {
                 color: #ffffff;
                 width: 24px;
                 height: 24px;
-                font-size: 14px;
-                font-weight: 500;
-                margin-left: 10px;
+                @include text-style(14px, 500px);
                 z-index: 1;
                 position: absolute;
             }
 
-            .etape-fonctionnement-content {
+            &__contenu {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -183,7 +223,7 @@ header {
                 @include card-shadow();
                 width: 335px;
                 height: 72.38px;
-                margin-left: 20px;
+                margin-left: 10px;
 
                 i {
                     color: #7E7E7E;
@@ -191,9 +231,13 @@ header {
                     padding: 0px 30px;
                 }
 
-                p {
-                    font-size: 16px;
-                    font-weight: 500;
+                &__text{
+                    h4{
+                        @include text-style(18px, 700);
+                    }
+                    p {
+                    @include text-style(16px, 500);
+                     }
                 }
             }
         }
@@ -205,7 +249,7 @@ header {
 .restaurants {
     padding: 48px 20px;
 
-    .restaurants-cards {
+    .restaurants__cards {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         align-items: center;
@@ -220,45 +264,46 @@ header {
             @include card-radius();
             box-sizing: border-box;
 
-            .image {
+            &__image {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-end;
+
+                img {
+                    height: 180px;
+                    width: 100%;
+                    object-fit: cover;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                }
+
+                &__nouveau {
+                    display: flex;
+                    align-items: center;
+                    width: 80px;
+                    height: 29px;
+                    background-color: $green-light;
+                    color: #008766;
+                    border-radius: 2px;
+                    justify-content: center;
+                    position: absolute;
+                    margin: 10px;
+                }
             }
 
-            img {
-                height: 180px;
-                width: 100%;
-                object-fit: cover;
-                border-top-left-radius: 15px;
-                border-top-right-radius: 15px;
-            }
-
-            .nouveau {
-                display: flex;
-                align-items: center;
-                width: 80px;
-                height: 29px;
-                background-color: $green-light;
-                color: #008766;
-                border-radius: 2px;
-                justify-content: center;
-                position: absolute;
-                margin: 10px;
-            }
-
-            .card-content {
+            &__contenu {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
                 padding: 10px;
 
-                .card-text {
-
+                &__text {
+                    h4{
+                        @include text-style(18px, 700)
+                    }
                     p {
-                        font-size: 17px;
-                        font-weight: 300;
+                        @include text-style(17px, 300)
                     }
                 }
             }
@@ -270,12 +315,12 @@ header {
 /******************* Styles page restaurants *******************/
 
 
-.pages-restaurants {
+.page__restaurants {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .purple-button{
+    .purple-button {
         margin: 30px 0px;
         border: none;
     }
@@ -296,29 +341,25 @@ header {
         width: 100%;
         box-sizing: border-box;
 
-        .titre-menu {
+        &__title {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-top: 20px;
 
-            h2 {
-                font-family: shrikhand, serif;
-                font-size: 28px;
-                margin: 0;
-
+            h1 {
+                @include logo (28px, left)
             }
 
-            .card-heart {
+            &__coeur {
                 font-size: 21px;
                 font-weight: lighter;
                 padding-right: 10px;
             }
         }
 
-        .titre-menu-part {
-            font-size: 16px;
-            font-weight: 300;
+        &__subtitle {
+            @include text-style(16px, lighter);
             margin: 30px 0px 20px 0px;
 
             span {
@@ -326,74 +367,72 @@ header {
                 padding-bottom: 5px;
             }
         }
-    }
-
-    .menu-part {
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 10px;
-        
-
-        .plat {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            justify-content: space-between;
-            @include card-radius();
-            @include card-shadow();
-            background-color: white;
-            height: 69px;
-            box-sizing: border-box;
-
-            .plat-nom {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                gap: 5px;
-                padding: 12px;
 
 
-                h4 {
-                    font-size: 18px;
-                    font-weight: 500;
-
-                }
-                
-                p {
-                    font-size: 15px;
-                    font-weight: 300;
-                }
-
-            }
+        &__category {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 10px;
 
 
-            .prix-icon{
+            &__plat {
                 display: flex;
                 flex-direction: row;
                 align-items: flex-end;
-                .prix{
-                    font-size: 15px;
-                    font-weight: 700;
-                    padding: 12px;
-                }
-    
-                .check {
+                justify-content: space-between;
+                @include card-radius();
+                @include card-shadow();
+                background-color: white;
+                height: 69px;
+                box-sizing: border-box;
+
+                &__nom {
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
-                    width: 59px;
-                    height: 69px;
-                    border-radius: 0px 15px 15px 0px;
-                    background-color: $green-light;
-                    color: white;
-                    text-align: center;
-                    align-items: center;
-    
-                    i {
-                        font-size: 20px;
+                    align-items: flex-start;
+                    gap: 5px;
+                    padding: 12px;
+
+
+                    h4 {
+                        @include text-style(18px, 500);
                     }
-    
-                    display: none;
+
+                    p {
+                        @include text-style(15px, 300);
+                    }
+
+                }
+
+
+                &__prixicon {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-end;
+
+                    &__prix {
+                        @include text-style(15px, 700);
+                        padding: 12px;
+                    }
+
+                    &__icon {
+                        display: flex;
+                        justify-content: center;
+                        width: 59px;
+                        height: 69px;
+                        border-radius: 0px 15px 15px 0px;
+                        background-color: $green-light;
+                        color: white;
+                        text-align: center;
+                        align-items: center;
+
+                        i {
+                            font-size: 20px;
+                        }
+
+                        display: none;
+                    }
                 }
             }
         }
@@ -402,7 +441,7 @@ header {
 
 
 /**** Footer ****/
-footer {
+.footer {
     background-color: $grey-dark;
     display: flex;
     flex-direction: column;
@@ -410,25 +449,23 @@ footer {
     color: white;
     padding: 22px 25px;
 
-    h1 {
-        font-family: Shrikhand, serif;
-        margin: 0;
-        font-weight: 400;
-        font-style: italic;
-        font-size: 18px;
+    &__title {
+        @include logo(18px, left);
         padding-bottom: 12px;
     }
 
-    .footer-part {
+    &__part {
         margin: 0;
         font-size: 16px;
         padding-top: 7px;
+        height: 20px;
 
         a {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
+            padding-top: 7px;
 
             i {
                 padding-right: 10px;
