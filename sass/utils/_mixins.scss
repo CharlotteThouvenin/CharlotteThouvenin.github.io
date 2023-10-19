@@ -1,0 +1,24 @@
+/******** Mixins *******/
+
+
+@mixin text-style ($font-size, $font-weight){
+    font-weight: $font-weight;
+    font-size: $font-size;
+    margin: 0;
+}
+
+@mixin card-shadow {
+    box-shadow: 0px 2px 4px 0px #00000026;
+}
+
+@mixin card-radius {
+    border-radius: 15px;
+}
+
+@mixin logo ($font-size, $text-align){
+    font-family: shrikhand, serif;
+    font-style:italic;
+    margin: 0;
+    font-size: $font-size;
+    text-align: $text-align;
+}

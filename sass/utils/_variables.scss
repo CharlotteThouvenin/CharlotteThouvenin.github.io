@@ -1,0 +1,11 @@
+/******** Variables *******/
+
+$purple: #9356DC;
+$green-light: #99E2D0;
+$grey-light: #F6F6F6;
+$grey-dark: #353535;
+$text-color: black;
+
+$purple-gradient: linear-gradient(193.33deg, $purple -11.44%, #FF79DA 123.93%);
+
+@debug $purple-gradient;
