@@ -1,0 +1,141 @@
+/******************* Styles page accueil *******************/
+
+/**** Div localisation ****/
+
+.localisation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    @include text-style(16px, 500);
+
+    i {
+        padding-right: 15px;
+    }
+}
+
+/**** Section Réserver et explorer ****/
+
+.reserver-et-explorer {
+    height: 287px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 40px 0;
+
+    h2{
+        padding: 0px 42px;
+    }
+    p {
+        @include text-style(18px, lighter);
+        padding:20px 34px;
+    }
+
+    a{
+        margin:20px Opx;
+    }
+}
+
+/**** Section Fontionnement ****/
+
+.fonctionnement {
+    height: 440px;
+    box-sizing: border-box;
+    padding: 48px 20px;
+    @media (min-width: 768.1px){
+        width: 100%;
+        height: auto;
+        padding: 50px 180px;
+    }
+
+    &__processus {
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 30px;
+        @media (min-width: 768.1px){
+            height: auto;
+            flex-direction: row;
+        }
+
+        &__etape {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            @media (min-width: 768.1px){
+                width: 30%;
+            }
+
+
+            &__numero {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                background-color: $purple;
+                color: #ffffff;
+                width: 24px;
+                height: 24px;
+                @include text-style(14px, 500px);
+                z-index: 1;
+                position: absolute;
+            }
+
+            &__contenu {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border-radius: 20px;
+                background-color: $grey-light;
+                @include card-shadow();
+                width: 335px;
+                height: 72.38px;
+                margin-left: 10px;
+
+                i {
+                    color: #7E7E7E;
+                    background-color: inherit;
+                    padding: 0px 30px;
+                }
+
+                &__text{
+                    h4{
+                        @include text-style(18px, 700);
+                    }
+                    p {
+                        @include text-style(16px, 500);
+                     }
+                }
+            }
+        }
+    }
+}
+
+
+
+/**** Section restaurants ****/
+
+.restaurants {
+    padding: 48px 20px;
+    @media (min-width: 768.1px){
+        padding: 50px 180px;
+    }
+
+    .restaurants__cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        margin-top: 20px;
+        @media (min-width: 768.1px){
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+}

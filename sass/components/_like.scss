@@ -1,0 +1,29 @@
+//.coeur:hover {display:none}
+button{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+.coeur:hover{
+    display: none;
+    cursor: pointer;
+}
+
+.coeur+.coeur__plein:hover{
+    display: inline;
+    opacity: 100%;
+}
+
+.coeur__plein{
+    opacity: 0%;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.coeur__plein:hover {
+    display: inline;
+}
