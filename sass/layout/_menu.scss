@@ -1,0 +1,73 @@
+.menu {
+    margin: -40px 0px 0px 0px;
+    border-radius: 40px 40px 0px 0px;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    background-color: $grey-light;
+    width: 100%;
+    box-sizing: border-box;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 27px 0px 17px;
+    }
+
+    &__subtitle {
+        padding: 20px 0px;
+
+        span {
+            border-bottom: solid 3px $green-light;
+            padding-bottom: 5px;
+        }
+    }
+
+
+    &__category {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+        overflow: hidden;
+        padding: 10px 0;
+
+
+        &__plat {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            @include card-radius();
+            @include card-shadow();
+            background-color: white;
+            height: 69px;
+            min-width: 349px;
+            overflow: hidden;
+            box-sizing: border-box;
+            
+
+            &__nom {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 5px;
+                padding: 12px;
+                min-width: 90px;
+            }
+            
+            &__prixicon{
+                display: inline-flex;
+                align-items: flex-end;
+                padding: 12px;
+                overflow: hidden;
+            
+                 &__prix {
+                    width: 59px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
