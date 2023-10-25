@@ -13,6 +13,10 @@
     box-shadow: 0px 2px 4px 0px #00000026;
 }
 
+@mixin darkcardshadow{
+    box-shadow: 0px 2px 4px 0px #0000008f;
+}
+
 @mixin card-radius {
     border-radius: 15px;
 }
@@ -23,4 +27,8 @@
     margin: 0;
     font-size: $font-size;
     text-align: $text-align;
+}
+
+@mixin lightgradient {
+    background: $lightgradient;
 }
