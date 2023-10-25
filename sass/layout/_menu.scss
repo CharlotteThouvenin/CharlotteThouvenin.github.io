@@ -42,8 +42,6 @@
             @include card-shadow();
             background-color: white;
             height: 69px;
-            min-width: 349px;
-            overflow: hidden;
             box-sizing: border-box;
             
 
@@ -54,20 +52,26 @@
                 align-items: flex-start;
                 gap: 5px;
                 padding: 12px;
-                min-width: 90px;
+                max-width: 80%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             
             &__prixicon{
                 display: inline-flex;
                 align-items: flex-end;
-                padding: 12px;
                 overflow: hidden;
             
                  &__prix {
                     width: 59px;
                     text-align: center;
+                    padding: 12px;
+                }
+                &__icon {
+                    margin-right:-59px;
+                    }
                 }
             }
         }
     }
-}

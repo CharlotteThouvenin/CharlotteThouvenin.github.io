@@ -8,10 +8,13 @@
     color: white;
     text-align: center;
     align-items: center;
-    display: none;
 
 
     i {
         font-size: 20px;
     }
+        
+ }
+.menu__category__plat + .menu__category__plat__prixicon:hover{
+    transform: translateX(-59px);
 }

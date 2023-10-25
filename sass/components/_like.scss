@@ -1,27 +1,42 @@
 
-
 .coeur{
     cursor: pointer;
+    position: relative;
+    text-shadow: 0 0 1px black;
+    z-index: 1;
+    color: white;
+    --fa-fade-opacity:0;
+        &:hover{
+            text-shadow: none;
+            &::after{
+                display: block;
+                opacity:1;
+            }
+        }
+        &::after {
+            display: none;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font: var(--fa-font-solid);
+            content: "\f004";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /**color: red;**/
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 1000ms;
+          }
 }
 
-.coeur__plein{
-    display: none;
-    opacity: 0%;
-    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: opacity 400ms ease-in-out;
-}
 
-.coeur:hover{
-    display: none;
-}
 
-.coeur + .coeur__plein :hover{
-    display: inline;
-    opacity: 1;
-    transform: opacity;
-}
+
 
 
