@@ -34,17 +34,16 @@
 
 
         &__plat {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 59px 59px;
             align-items: flex-end;
             @include card-radius();
             @include card-shadow();
             background-color: white;
             height: 69px;
             box-sizing: border-box;
+            cursor: pointer;
             
-
             &__nom {
                 display: flex;
                 flex-direction: column;
@@ -52,25 +51,23 @@
                 align-items: flex-start;
                 gap: 5px;
                 padding: 12px;
-                max-width: 80%;
-                white-space: nowrap;
+        
+                h4{
                 overflow: hidden;
+                white-space: nowrap;
                 text-overflow: ellipsis;
+                }
+                p{
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
             }
             
-            &__prixicon{
-                display: inline-flex;
-                align-items: flex-end;
-                overflow: hidden;
-            
-                 &__prix {
+            &__prix {
                     width: 59px;
                     text-align: center;
-                    padding: 12px;
-                }
-                &__icon {
-                    margin-right:-59px;
-                    }
+                    padding-bottom: 12px;
                 }
             }
         }

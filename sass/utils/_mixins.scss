@@ -32,3 +32,19 @@
 @mixin lightgradient {
     background: $lightgradient;
 }
+
+@mixin gradientHeart{
+    background: $purple-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin fontawesome ($fontcontent){
+    display: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    content:$fontcontent;
+}
+

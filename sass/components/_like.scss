@@ -15,20 +15,17 @@
         }
         &::after {
             display: none;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font: var(--fa-font-solid);
-            content: "\f004";
+            //text-rendering: auto;
+           // -webkit-font-smoothing: antialiased;
+          //  font: var(--fa-font-solid);
+           // content: "\f004";
+            @include fontawesome ("\f004");
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
-            background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            /**color: red;**/
+            @include gradientHeart;
             opacity: 0;
             z-index: 2;
             transition: opacity 1000ms;

@@ -272,15 +272,15 @@ header h1 {
   padding: 10px 0;
 }
 .menu__category__plat {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 59px 59px;
   align-items: flex-end;
   border-radius: 15px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   background-color: white;
   height: 69px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .menu__category__plat__nom {
   display: flex;
@@ -289,23 +289,21 @@ header h1 {
   align-items: flex-start;
   gap: 5px;
   padding: 12px;
-  max-width: 80%;
-  white-space: nowrap;
+}
+.menu__category__plat__nom h4 {
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu__category__plat__prixicon {
-  display: inline-flex;
-  align-items: flex-end;
+.menu__category__plat__nom p {
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.menu__category__plat__prixicon__prix {
+.menu__category__plat__prix {
   width: 59px;
   text-align: center;
-  padding: 12px;
-}
-.menu__category__plat__prixicon__icon {
-  margin-right: -59px;
+  padding-bottom: 12px;
 }
 
 .card {
@@ -350,7 +348,25 @@ header h1 {
   line-height: 20px;
 }
 
-.menu__category__plat__prixicon__icon {
+.menu__category__plat {
+  overflow: hidden;
+}
+.menu__category__plat:hover .menu__category__plat__prix {
+  transform: translateX(0%);
+}
+.menu__category__plat:hover .menu__category__plat__icon {
+  transform: translateX(0%);
+}
+.menu__category__plat:hover .menu__category__plat__nom {
+  transform: scaleX(-59px);
+}
+.menu__category__plat__prix {
+  transform: translateX(100%);
+  transition: transform 600ms ease-in-out;
+}
+.menu__category__plat__icon {
+  transform: translateX(100%);
+  transition: transform 600ms ease-in-out;
   display: flex;
   justify-content: center;
   width: 59px;
@@ -360,13 +376,7 @@ header h1 {
   color: white;
   text-align: center;
   align-items: center;
-}
-.menu__category__plat__prixicon__icon i {
   font-size: 20px;
-}
-
-.menu__category__plat + .menu__category__plat__prixicon:hover {
-  transform: translateX(-59px);
 }
 
 .coeur {
@@ -386,6 +396,7 @@ header h1 {
 }
 .coeur::after {
   display: none;
+  display: none;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font: var(--fa-font-solid);
@@ -395,11 +406,10 @@ header h1 {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #ff79DA 123.93%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /**color: red;**/
   opacity: 0;
   z-index: 2;
   transition: opacity 1000ms;
