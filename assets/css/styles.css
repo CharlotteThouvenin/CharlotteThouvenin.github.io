@@ -27,6 +27,15 @@ a {
   font-size: 25px;
 }
 
+h2 {
+  font-family: roboto, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+}
+
 /**** Header ****/
 .header i {
   color: #101010;
@@ -143,7 +152,7 @@ a {
   margin: 0;
   padding: 0;
 }
-.menu__category__plat__prixicon__prix {
+.menu__category__plat__prix {
   font-family: roboto, sans-serif;
   font-weight: 700;
   font-size: 15px;
@@ -242,6 +251,9 @@ header h1 {
 }
 
 .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: -40px 0px 0px 0px;
   border-radius: 40px 40px 0px 0px;
   padding: 10px;
@@ -251,14 +263,28 @@ header h1 {
   width: 100%;
   box-sizing: border-box;
 }
+@media (min-width: 1055px) {
+  .menu {
+    width: 1055px;
+  }
+}
 .menu__title {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px 27px 0px 17px;
 }
+.menu__title_coeur {
+  padding-left: 25px;
+}
+.menu__title_coeur::after {
+  padding-left: 25px;
+}
+.menu__title .coeur {
+  color: #F6F6F6;
+}
 .menu__subtitle {
-  padding: 20px 0px;
+  padding-bottom: 10px;
 }
 .menu__subtitle span {
   border-bottom: solid 3px #99E2D0;
@@ -267,9 +293,17 @@ header h1 {
 .menu__category {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  align-items: end;
   gap: 10px;
   overflow: hidden;
   padding: 10px 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+@media (min-width: 650px) {
+  .menu__category {
+    width: 634px;
+  }
 }
 .menu__category__plat {
   display: grid;
@@ -285,10 +319,11 @@ header h1 {
 .menu__category__plat__nom {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;
   gap: 5px;
   padding: 12px;
+  width: 100%;
+  overflow: hidden;
 }
 .menu__category__plat__nom h4 {
   overflow: hidden;
@@ -362,11 +397,11 @@ header h1 {
 }
 .menu__category__plat__prix {
   transform: translateX(100%);
-  transition: transform 600ms ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 .menu__category__plat__icon {
   transform: translateX(100%);
-  transition: transform 600ms ease-in-out;
+  transition: transform 200ms ease-in-out;
   display: flex;
   justify-content: center;
   width: 59px;
@@ -474,11 +509,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  font-family: roboto, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
 }
 .localisation i {
   padding-right: 15px;
@@ -499,11 +529,6 @@ body {
   padding: 0px 42px;
 }
 .reserver-et-explorer p {
-  font-family: roboto, sans-serif;
-  font-weight: lighter;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
   padding: 20px 34px;
 }
 .reserver-et-explorer a {
@@ -552,14 +577,8 @@ body {
   justify-content: center;
   border-radius: 100%;
   background-color: #9356DC;
-  color: #ffffff;
   width: 24px;
   height: 24px;
-  font-family: roboto, sans-serif;
-  font-weight: 500px;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
   z-index: 1;
   position: absolute;
 }
@@ -575,23 +594,8 @@ body {
   margin-left: 10px;
 }
 .fonctionnement__processus__etape__contenu i {
-  color: #7E7E7E;
   background-color: inherit;
   padding: 0px 30px;
-}
-.fonctionnement__processus__etape__contenu__text h4 {
-  font-family: roboto, sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-}
-.fonctionnement__processus__etape__contenu__text p {
-  font-family: roboto, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
 }
 
 /**** Section restaurants ****/
@@ -621,6 +625,7 @@ body {
 /******************* Styles page restaurants *******************/
 body {
   margin: 0;
+  background-color: white;
 }
 
 .page__restaurants {

@@ -12,8 +12,6 @@ body{
     justify-content: center;
     align-items: center;
     padding: 20px;
-    @include text-style(16px, 500);
-
     i {
         padding-right: 15px;
     }
@@ -35,7 +33,7 @@ body{
         padding: 0px 42px;
     }
     p {
-        @include text-style(18px, lighter);
+
         padding:20px 34px;
     }
 
@@ -82,10 +80,8 @@ body{
                 justify-content: center;
                 border-radius: 100%;
                 background-color: $purple;
-                color: #ffffff;
                 width: 24px;
                 height: 24px;
-                @include text-style(14px, 500px);
                 z-index: 1;
                 position: absolute;
             }
@@ -102,18 +98,9 @@ body{
                 margin-left: 10px;
 
                 i {
-                    color: #7E7E7E;
+                    
                     background-color: inherit;
                     padding: 0px 30px;
-                }
-
-                &__text{
-                    h4{
-                        @include text-style(18px, 700);
-                    }
-                    p {
-                        @include text-style(16px, 500);
-                     }
                 }
             }
         }

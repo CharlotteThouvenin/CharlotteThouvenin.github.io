@@ -13,6 +13,11 @@ a {
     font-size: 25px;
 }
 
+h2{
+    @include text-style(24px, 700);
+    margin:0;
+}
+
 /**** Header ****/
 
 .header{
@@ -105,7 +110,7 @@ a {
             @include text-style(15px, 300);
         }
 
-        &__plat__prixicon__prix{
+        &__plat__prix{
             @include text-style(15px, 700);
         }
     }

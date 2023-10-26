@@ -15,10 +15,6 @@
         }
         &::after {
             display: none;
-            //text-rendering: auto;
-           // -webkit-font-smoothing: antialiased;
-          //  font: var(--fa-font-solid);
-           // content: "\f004";
             @include fontawesome ("\f004");
             position: absolute;
             top: 0;
