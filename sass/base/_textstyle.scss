@@ -26,6 +26,9 @@ h2{
     }
     h1{
         @include logo(30px, center);
+        @media (min-width: 768.1px){
+            @include logo (34px, center);
+        }
     }
 }
 

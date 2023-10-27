@@ -7,7 +7,7 @@
     height: 50px;
     border-radius: 25px;
     background: $purple-gradient;
-    @include card-shadow();
+    @include button-shadow();
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@
     &::after {
         content: "";
         border-radius: 25px;
-        box-shadow: 0px 2px 4px 0px #0000008f;
+        @include button-shadow;
         position: absolute;
         top: 0;
         right: 0;

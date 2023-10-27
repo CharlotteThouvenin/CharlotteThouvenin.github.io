@@ -4,6 +4,7 @@
     background-color: white;
     width: 100%;
     @include card-radius();
+    @include card-shadow();
     box-sizing: border-box;
     @media (min-width: 768.1px){
         width: 45%;

@@ -1,16 +1,16 @@
 @charset "UTF-8";
 /******** Variables *******/
 /******** Mixins *******/
-body {
-  background-color: #F6F6F6;
-}
-
 .localisation {
   background-color: #EAEAEA;
 }
 
 .fonctionnement {
   background-color: white;
+}
+
+.restaurants .reserver-et-explorer {
+  background-color: #F6F6F6;
 }
 
 /********** Général **********/
@@ -46,6 +46,15 @@ h2 {
   margin: 0;
   font-size: 30px;
   text-align: center;
+}
+@media (min-width: 768.1px) {
+  .header h1 {
+    font-family: shrikhand, serif;
+    font-style: italic;
+    margin: 0;
+    font-size: 34px;
+    text-align: center;
+  }
 }
 
 /**** Footer ****/
@@ -294,7 +303,7 @@ header h1 {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   align-items: end;
-  gap: 10px;
+  gap: 15px;
   overflow: hidden;
   padding: 10px 0;
   box-sizing: border-box;
@@ -307,13 +316,12 @@ header h1 {
 }
 .menu__category__plat {
   display: grid;
-  grid-template-columns: 1fr 59px 59px;
+  grid-template-columns: calc(100% - 59px) 59px 59px;
   align-items: flex-end;
   border-radius: 15px;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   background-color: white;
   height: 69px;
-  box-sizing: border-box;
   cursor: pointer;
 }
 .menu__category__plat__nom {
@@ -321,9 +329,8 @@ header h1 {
   flex-direction: column;
   justify-content: space-between;
   gap: 5px;
-  padding: 12px;
+  padding: 12px 0px 12px 12px;
   width: 100%;
-  overflow: hidden;
 }
 .menu__category__plat__nom h4 {
   overflow: hidden;
@@ -341,12 +348,39 @@ header h1 {
   padding-bottom: 12px;
 }
 
+/** Animation menu **/
+.menu__category {
+  opacity: O;
+  animation: appear 1s ease-in-out 0s both;
+}
+.menu__category:nth-child(1) {
+  animation-delay: 0s;
+}
+.menu__category:nth-child(2) {
+  animation-delay: 1.5s;
+}
+.menu__category:nth-child(3) {
+  animation-delay: 2.5s;
+}
+.menu__category:nth-child(4) {
+  animation-delay: 3.5s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .card {
   display: flex;
   flex-direction: column;
   background-color: white;
   width: 100%;
   border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   box-sizing: border-box;
 }
 @media (min-width: 768.1px) {
@@ -386,22 +420,28 @@ header h1 {
 .menu__category__plat {
   overflow: hidden;
 }
+.menu__category__plat:hover {
+  overflow: hidden;
+}
 .menu__category__plat:hover .menu__category__plat__prix {
-  transform: translateX(0%);
+  transform: translateX(-100%);
 }
 .menu__category__plat:hover .menu__category__plat__icon {
-  transform: translateX(0%);
+  transform: translateX(-100%);
 }
 .menu__category__plat:hover .menu__category__plat__nom {
-  transform: scaleX(-59px);
+  width: calc(100% - 59px);
+}
+.menu__category__plat__nom {
+  transition: width 500ms ease-in-out;
 }
 .menu__category__plat__prix {
-  transform: translateX(100%);
-  transition: transform 200ms ease-in-out;
+  transform: translateX(0%);
+  transition: transform 500ms ease-in-out;
 }
 .menu__category__plat__icon {
-  transform: translateX(100%);
-  transition: transform 200ms ease-in-out;
+  transform: translateX(0%);
+  transition: transform 500ms ease-in-out;
   display: flex;
   justify-content: center;
   width: 59px;
@@ -485,7 +525,7 @@ header h1 {
 .purple-button::after {
   content: "";
   border-radius: 25px;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5607843137);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   position: absolute;
   top: 0;
   right: 0;
@@ -588,7 +628,7 @@ body {
   align-items: center;
   border-radius: 20px;
   background-color: #F6F6F6;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   width: 335px;
   height: 72.38px;
   margin-left: 10px;
@@ -640,6 +680,18 @@ body {
   width: 100%;
   height: 275px;
   object-fit: cover;
+}
+@media (min-width: 768.1px) {
+  .page__restaurants img {
+    height: 383px;
+  }
+}
+
+.commander {
+  background-color: #F6F6F6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

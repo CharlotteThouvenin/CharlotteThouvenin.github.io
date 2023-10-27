@@ -2,24 +2,32 @@
     &__category{
         &__plat{
             overflow: hidden;
+            &:hover{
+                overflow: hidden;
+            }
             &:hover &__prix{
-                transform: translateX(-0%);
+                transform: translateX(-100%);
             }
             &:hover &__icon{
-                transform: translateX(-0%);
+                transform: translateX(-100%);
             }
+
             &:hover &__nom{
-                transform: scaleX(-59px);
+                width: calc(100% - 59px);
+                }
+
+            &__nom{
+                transition: width 500ms ease-in-out;
             }
 
             &__prix{
-                transform: translateX(100%);
-                transition: transform 200ms ease-in-out;
+                transform: translateX(0%);
+                transition: transform 500ms ease-in-out;
                 
             }
             &__icon{
-                transform: translateX(100%);
-                transition: transform 200ms ease-in-out;
+                transform: translateX(0%);
+                transition: transform 500ms ease-in-out;
                 display: flex;
                 justify-content: center;
                 width: 59px;

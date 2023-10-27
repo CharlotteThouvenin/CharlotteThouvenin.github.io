@@ -43,11 +43,12 @@
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         align-items: end;
-        gap: 10px;
+        gap: 15px;
         overflow: hidden;
         padding: 10px 0;
         box-sizing: border-box;
         width: 100%;
+        
 
         @media (min-width: 650px){
             width: 634px;
@@ -56,34 +57,33 @@
 
         &__plat {
             display: grid;
-            grid-template-columns: 1fr 59px 59px;
+            grid-template-columns: calc(100% - 59px) 59px 59px;
             align-items: flex-end;
             @include card-radius();
             @include card-shadow();
             background-color: white;
             height: 69px;
-            box-sizing: border-box;
             cursor: pointer;
+
             
             &__nom {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 gap: 5px;
-                padding: 12px;
+                padding: 12px 0px 12px 12px;
                 width: 100%;
-                overflow: hidden;
-        
                 h4{
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                }
-                p{
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
-                }
+                    }
+                p{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+        
             }
             
             &__prix {
@@ -94,3 +94,34 @@
             }
         }
     }
+
+    /** Animation menu **/
+
+.menu{
+    &__category{
+        opacity:O;
+        animation: appear 1s ease-in-out 0s both;
+        &:nth-child(1){
+            animation-delay: 0s;
+        }
+        &:nth-child(2){
+            animation-delay: 1.5s;
+        }
+        &:nth-child(3){
+            animation-delay: 2.5s;
+        }
+        &:nth-child(4){
+            animation-delay: 3.5s;
+        }
+    }
+}
+
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
