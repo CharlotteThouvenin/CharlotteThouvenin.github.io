@@ -1,4 +1,4 @@
-$anim-dur: 1000ms;
+$anim-dur: 500ms;
 $anim-delay: calc($anim-dur / 5);
 
 .body{
@@ -27,10 +27,14 @@ $anim-delay: calc($anim-dur / 5);
     &__bars{
         display: flex;
         flex-direction: row;
-        width: 50%;
-        height:50%;
+        width: 90%;
+        height:40%;
         justify-content: space-around;
         align-items: center;
+        @media (min-width: 768.1px){
+            width: 50%;
+            height: 50%;
+        }
 
         &__element{
             height:100%;
@@ -38,7 +42,7 @@ $anim-delay: calc($anim-dur / 5);
             opacity:0;
             @include card-radius();
             background: $purple-gradient;
-            animation: bars $anim-dur ease-in-out backwards infinite reverse;
+            animation: bars $anim-dur ease-in-out 100ms both infinite alternate-reverse;
 
             @for $i from 1 through 5 {
                 &--#{$i} {
@@ -50,6 +54,7 @@ $anim-delay: calc($anim-dur / 5);
     &__description{
         text-align: center;
         padding: 30px;
+        @include text-style(16px, 500);
         
     }
 }
@@ -57,24 +62,36 @@ $anim-delay: calc($anim-dur / 5);
 
 @keyframes bars {
     from{
-        opacity: 0;
+        opacity: 1;
     }
     to {
-        opacity: 1;
+        opacity: 0;
     }
 }
 
 @keyframes loader {
     0% {
         transform: translateX(-9999px);
+        opacity:0;
     }
     100% {
         transform: translateX(0);
+        opacity:1;
     }
 }
 
+
+
 .body-index{
-    animation: loader 0ms 4s both;
+    opacity:0;
+    animation: loader 0ms 3000ms both;
+    animation: bars 200ms ease-in-out 3000ms both reverse;
     position: absolute;
     z-index: 1;
+
+}
+
+.loader{
+    opacity:1;
+    animation: bars 200ms ease-in-out 2800ms both;
 }
