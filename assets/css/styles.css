@@ -9,7 +9,7 @@
   background-color: white;
 }
 
-.restaurants .reserver-et-explorer {
+.restaurants, .reserver-et-explorer {
   background-color: #F6F6F6;
 }
 
@@ -189,6 +189,9 @@ header h1 {
 }
 
 /* Spécificité header page d'accueil */
+.body-index .header {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+}
 .body-index .header__link {
   display: none;
 }
@@ -460,7 +463,6 @@ header h1 {
   text-shadow: 0 0 1px black;
   z-index: 1;
   color: white;
-  --fa-fade-opacity:0;
 }
 .coeur:hover {
   text-shadow: none;
@@ -487,9 +489,17 @@ header h1 {
   -webkit-text-fill-color: transparent;
   opacity: 0;
   z-index: 2;
-  transition: opacity 1000ms;
+  animation: coeurplein 400ms ease-in-out forwards;
 }
 
+@keyframes coeurplein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .card__image__nouveau {
   display: flex;
   align-items: center;
@@ -535,6 +545,90 @@ header h1 {
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms ease-in-out 10ms;
+}
+
+.body {
+  position: relative;
+}
+
+.loader {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.loader__title {
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+}
+.loader__title span {
+  font-family: shrikhand, serif;
+  font-style: italic;
+  margin: 0;
+  font-size: 30px;
+  text-align: center;
+}
+.loader__bars {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 50%;
+  justify-content: space-around;
+  align-items: center;
+}
+.loader__bars__element {
+  height: 100%;
+  width: 15%;
+  opacity: 0;
+  border-radius: 15px;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #ff79DA 123.93%);
+  animation: bars 1000ms ease-in-out backwards infinite reverse;
+}
+.loader__bars__element--1 {
+  animation-delay: 200ms;
+}
+.loader__bars__element--2 {
+  animation-delay: 400ms;
+}
+.loader__bars__element--3 {
+  animation-delay: 600ms;
+}
+.loader__bars__element--4 {
+  animation-delay: 800ms;
+}
+.loader__bars__element--5 {
+  animation-delay: 1000ms;
+}
+.loader__description {
+  text-align: center;
+  padding: 30px;
+}
+
+@keyframes bars {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loader {
+  0% {
+    transform: translateX(-9999px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.body-index {
+  animation: loader 0ms 4s both;
+  position: absolute;
+  z-index: 1;
 }
 
 /******************* Styles page accueil *******************/
@@ -593,6 +687,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding-top: 30px;
 }
 @media (min-width: 768.1px) {
