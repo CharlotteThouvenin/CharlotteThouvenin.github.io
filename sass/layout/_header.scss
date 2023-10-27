@@ -24,6 +24,7 @@ header {
 
 .body-index {
     .header {
+        @include card-shadow;
         &__link{
             display: none;
         }

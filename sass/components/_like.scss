@@ -5,7 +5,6 @@
     text-shadow: 0 0 1px black;
     z-index: 1;
     color: white;
-    --fa-fade-opacity:0;
         &:hover{
             text-shadow: none;
             &::after{
@@ -24,11 +23,20 @@
             @include gradientHeart;
             opacity: 0;
             z-index: 2;
-            transition: opacity 1000ms;
+            animation: coeurplein 400ms ease-in-out forwards;
           }
 }
 
+@keyframes coeurplein {
 
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
 
 
 

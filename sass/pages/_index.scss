@@ -45,6 +45,7 @@ body{
 /**** Section Fontionnement ****/
 
 .fonctionnement {
+    
     height: 440px;
     box-sizing: border-box;
     padding: 48px 20px;
@@ -59,6 +60,7 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         padding-top: 30px;
         @media (min-width: 768.1px){
             height: auto;
