@@ -23,20 +23,10 @@
             @include gradientHeart;
             opacity: 0;
             z-index: 2;
-            animation: coeurplein 400ms ease-in-out forwards;
+            animation: appear 200ms ease-in-out forwards;
           }
 }
 
-@keyframes coeurplein {
-
-    from{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-    
-}
 
 
 

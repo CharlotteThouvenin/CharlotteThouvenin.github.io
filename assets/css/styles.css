@@ -1,6 +1,24 @@
 @charset "UTF-8";
 /******** Variables *******/
 /******** Mixins *******/
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loader {
+  0% {
+    transform: translateX(-9999px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .localisation {
   background-color: #EAEAEA;
 }
@@ -354,29 +372,21 @@ header h1 {
 /** Animation menu **/
 .menu__category {
   opacity: O;
-  animation: appear 1s ease-in-out 0s both;
+  animation: appear 1s linear 0s both;
 }
 .menu__category:nth-child(1) {
   animation-delay: 0s;
 }
 .menu__category:nth-child(2) {
-  animation-delay: 1.5s;
+  animation-delay: 0.1s;
 }
 .menu__category:nth-child(3) {
-  animation-delay: 2.5s;
+  animation-delay: 1.5s;
 }
 .menu__category:nth-child(4) {
-  animation-delay: 3.5s;
+  animation-delay: 2.5s;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .card {
   display: flex;
   flex-direction: column;
@@ -489,17 +499,9 @@ header h1 {
   -webkit-text-fill-color: transparent;
   opacity: 0;
   z-index: 2;
-  animation: coeurplein 400ms ease-in-out forwards;
+  animation: appear 200ms ease-in-out forwards;
 }
 
-@keyframes coeurplein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .card__image__nouveau {
   display: flex;
   align-items: center;
@@ -562,38 +564,26 @@ header h1 {
   justify-content: space-around;
   align-items: center;
 }
-.loader__title {
-  text-align: center;
-  padding: 40px 20px 20px 20px;
-}
-.loader__title span {
-  font-family: shrikhand, serif;
-  font-style: italic;
-  margin: 0;
-  font-size: 30px;
-  text-align: center;
-}
 .loader__bars {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  height: 40%;
+  width: 30%;
+  height: 10%;
   justify-content: space-around;
   align-items: center;
 }
 @media (min-width: 768.1px) {
   .loader__bars {
-    width: 50%;
-    height: 50%;
+    width: 10%;
   }
 }
 .loader__bars__element {
   height: 100%;
   width: 15%;
   opacity: 0;
-  border-radius: 15px;
+  border-radius: 5px;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #ff79DA 123.93%);
-  animation: bars 500ms ease-in-out 100ms both infinite alternate-reverse;
+  animation: appear 500ms ease-in-out 100ms both infinite alternate;
 }
 .loader__bars__element--1 {
   animation-delay: 100ms;
@@ -610,50 +600,24 @@ header h1 {
 .loader__bars__element--5 {
   animation-delay: 500ms;
 }
-.loader__description {
-  text-align: center;
-  padding: 30px;
-  font-family: roboto, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
-}
 
-@keyframes bars {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes loader {
-  0% {
-    transform: translateX(-9999px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 .body-index {
   opacity: 0;
   animation: loader 0ms 3000ms both;
-  animation: bars 200ms ease-in-out 3000ms both reverse;
+  animation: appear 200ms ease-in-out 3000ms both;
   position: absolute;
   z-index: 1;
 }
 
 .loader {
   opacity: 1;
-  animation: bars 200ms ease-in-out 2800ms both;
+  animation: appear 200ms ease-in-out 2800ms both reverse;
 }
 
 /******************* Styles page accueil *******************/
 body {
   margin: 0;
+  width: 100%;
 }
 
 /**** Div localisation ****/

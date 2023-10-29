@@ -16,33 +16,24 @@ $anim-delay: calc($anim-dur / 5);
     justify-content: space-around;
     align-items: center;
 
-    &__title{
-        text-align: center;
-        padding: 40px 20px 20px 20px;
-        span{
-            @include logo(30px, center)
-        }
-    }
-
     &__bars{
         display: flex;
         flex-direction: row;
-        width: 90%;
-        height:40%;
+        width: 30%;
+        height:10%;
         justify-content: space-around;
         align-items: center;
         @media (min-width: 768.1px){
-            width: 50%;
-            height: 50%;
+            width: 10%;
         }
 
         &__element{
             height:100%;
             width: 15%;
             opacity:0;
-            @include card-radius();
+            border-radius: 5px;
             background: $purple-gradient;
-            animation: bars $anim-dur ease-in-out 100ms both infinite alternate-reverse;
+            animation: appear $anim-dur ease-in-out 100ms both infinite alternate;
 
             @for $i from 1 through 5 {
                 &--#{$i} {
@@ -51,41 +42,15 @@ $anim-delay: calc($anim-dur / 5);
             }
         }
     }
-    &__description{
-        text-align: center;
-        padding: 30px;
-        @include text-style(16px, 500);
-        
-    }
 }
 
-
-@keyframes bars {
-    from{
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes loader {
-    0% {
-        transform: translateX(-9999px);
-        opacity:0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity:1;
-    }
-}
 
 
 
 .body-index{
     opacity:0;
     animation: loader 0ms 3000ms both;
-    animation: bars 200ms ease-in-out 3000ms both reverse;
+    animation: appear 200ms ease-in-out 3000ms both ;
     position: absolute;
     z-index: 1;
 
@@ -93,5 +58,5 @@ $anim-delay: calc($anim-dur / 5);
 
 .loader{
     opacity:1;
-    animation: bars 200ms ease-in-out 2800ms both;
+    animation: appear 200ms ease-in-out 2800ms both reverse;
 }
