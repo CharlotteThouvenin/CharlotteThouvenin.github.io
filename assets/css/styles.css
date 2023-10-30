@@ -513,7 +513,7 @@ header h1 {
   -webkit-text-fill-color: transparent;
   opacity: 0;
   z-index: 2;
-  transition: appear 200ms ease-in-out alternate both;
+  animation: appear 300ms ease-in-out forwards;
 }
 
 .card__image__nouveau {

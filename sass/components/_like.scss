@@ -15,11 +15,15 @@
         &::after {
             display: none;
             @include fontawesome ("\f004");
-            @include after-position;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             @include gradientHeart;
             opacity: 0;
             z-index: 2;
-            transition: appear 200ms ease-in-out alternate both;
+            animation: appear 300ms ease-in-out forwards;
           }
 }
 
