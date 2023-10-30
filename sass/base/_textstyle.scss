@@ -54,6 +54,11 @@ h2{
 /**** Section Réserver et explorer ****/
 
 .reserver-et-explorer{
+    h2{
+        @media (min-width: 768px){
+            @include text-style(40px, 700);
+        }
+    }
     p {
         @include text-style(18px, lighter);
     }

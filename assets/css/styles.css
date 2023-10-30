@@ -99,6 +99,15 @@ h2 {
 }
 
 /**** Section Réserver et explorer ****/
+@media (min-width: 768px) {
+  .reserver-et-explorer h2 {
+    font-family: roboto, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+  }
+}
 .reserver-et-explorer p {
   font-family: roboto, sans-serif;
   font-weight: lighter;
@@ -400,6 +409,11 @@ header h1 {
   .card {
     width: 45%;
     height: 251px;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
     margin-bottom: 50px;
   }
 }
@@ -499,7 +513,7 @@ header h1 {
   -webkit-text-fill-color: transparent;
   opacity: 0;
   z-index: 2;
-  animation: appear 200ms ease-in-out forwards;
+  transition: appear 200ms ease-in-out alternate both;
 }
 
 .card__image__nouveau {
@@ -515,9 +529,6 @@ header h1 {
 
 .purple-button {
   cursor: pointer;
-  display: block;
-  position: relative;
-  z-index: 1;
   width: 218px;
   height: 50px;
   border-radius: 25px;
@@ -530,6 +541,8 @@ header h1 {
   font-weight: 500px;
   font-size: 16px;
   border: 0px transparent;
+  position: relative;
+  z-index: 1;
 }
 .purple-button:hover::after {
   opacity: 1;
@@ -583,40 +596,43 @@ header h1 {
   opacity: 0;
   border-radius: 5px;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #ff79DA 123.93%);
-  animation: appear 500ms ease-in-out 100ms both infinite alternate;
+  animation: appear 400ms ease-in-out 100ms both infinite alternate;
 }
 .loader__bars__element--1 {
-  animation-delay: 100ms;
+  animation-delay: 80ms;
 }
 .loader__bars__element--2 {
-  animation-delay: 200ms;
+  animation-delay: 160ms;
 }
 .loader__bars__element--3 {
-  animation-delay: 300ms;
+  animation-delay: 240ms;
 }
 .loader__bars__element--4 {
-  animation-delay: 400ms;
+  animation-delay: 320ms;
 }
 .loader__bars__element--5 {
-  animation-delay: 500ms;
+  animation-delay: 400ms;
 }
 
 .body-index {
   opacity: 0;
-  animation: loader 0ms 3000ms both;
-  animation: appear 200ms ease-in-out 3000ms both;
+  animation: loader 0ms 1600ms both;
+  animation: appear 200ms ease-in-out 1600ms both;
   position: absolute;
   z-index: 1;
 }
 
 .loader {
   opacity: 1;
-  animation: appear 200ms ease-in-out 2800ms both reverse;
+  animation: appear 200ms ease-in-out 1400ms both reverse;
 }
 
 /******************* Styles page accueil *******************/
 body {
   margin: 0;
+  width: 100%;
+}
+body .body-index {
   width: 100%;
 }
 
@@ -659,10 +675,14 @@ body {
   box-sizing: border-box;
   padding: 48px 20px;
 }
-@media (min-width: 768.1px) {
+@media (min-width: 768px) {
   .fonctionnement {
-    width: 100%;
+    padding: 50px 50px;
     height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement {
     padding: 50px 180px;
   }
 }
@@ -674,9 +694,14 @@ body {
   align-items: center;
   padding-top: 30px;
 }
-@media (min-width: 768.1px) {
+@media (min-width: 768px) {
   .fonctionnement__processus {
+    flex-direction: row;
     height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement__processus {
     flex-direction: row;
   }
 }
@@ -685,7 +710,7 @@ body {
   flex-direction: row;
   align-items: center;
 }
-@media (min-width: 768.1px) {
+@media (min-width: 768px) {
   .fonctionnement__processus__etape {
     width: 30%;
   }
@@ -721,7 +746,12 @@ body {
 .restaurants {
   padding: 48px 20px;
 }
-@media (min-width: 768.1px) {
+@media (min-width: 768px) {
+  .restaurants {
+    padding: 50px 50px;
+  }
+}
+@media (min-width: 1024px) {
   .restaurants {
     padding: 50px 180px;
   }
@@ -771,6 +801,11 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+@media (min-width: 1055px) {
+  .commander {
+    width: 1055px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

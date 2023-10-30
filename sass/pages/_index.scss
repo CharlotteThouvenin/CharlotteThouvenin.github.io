@@ -3,6 +3,9 @@
 body{
     margin:0;
     width: 100%;
+    .body-index{
+        width: 100%;
+    }
 }
 
 
@@ -51,12 +54,15 @@ body{
     height: 440px;
     box-sizing: border-box;
     padding: 48px 20px;
-    @media (min-width: 768.1px){
-        width: 100%;
-        height: auto;
+    @media (min-width: 768px){
+        padding: 50px 50px;
+        height:auto;
+    }
+    @media (min-width: 1024px){
         padding: 50px 180px;
     }
-
+    
+    
     &__processus {
         height: 280px;
         display: flex;
@@ -64,8 +70,11 @@ body{
         justify-content: space-between;
         align-items: center;
         padding-top: 30px;
-        @media (min-width: 768.1px){
-            height: auto;
+        @media (min-width: 768px){
+            flex-direction: row;
+            height:auto;
+        }
+        @media (min-width: 1024px){
             flex-direction: row;
         }
 
@@ -73,10 +82,9 @@ body{
             display: flex;
             flex-direction: row;
             align-items: center;
-            @media (min-width: 768.1px){
+            @media (min-width: 768px){
                 width: 30%;
             }
-
 
             &__numero {
                 display: flex;
@@ -102,7 +110,6 @@ body{
                 margin-left: 10px;
 
                 i {
-                    
                     background-color: inherit;
                     padding: 0px 30px;
                 }
@@ -117,7 +124,10 @@ body{
 
 .restaurants {
     padding: 48px 20px;
-    @media (min-width: 768.1px){
+    @media (min-width: 768px){
+        padding: 50px 50px;
+    }
+    @media (min-width: 1024px){
         padding: 50px 180px;
     }
 

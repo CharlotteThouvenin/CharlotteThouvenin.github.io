@@ -1,4 +1,4 @@
-$anim-dur: 500ms;
+$anim-dur: 400ms;
 $anim-delay: calc($anim-dur / 5);
 
 .body{
@@ -49,8 +49,8 @@ $anim-delay: calc($anim-dur / 5);
 
 .body-index{
     opacity:0;
-    animation: loader 0ms 3000ms both;
-    animation: appear 200ms ease-in-out 3000ms both ;
+    animation: loader 0ms 1600ms both;
+    animation: appear 200ms ease-in-out 1600ms both ;
     position: absolute;
     z-index: 1;
 
@@ -58,5 +58,5 @@ $anim-delay: calc($anim-dur / 5);
 
 .loader{
     opacity:1;
-    animation: appear 200ms ease-in-out 2800ms both reverse;
+    animation: appear 200ms ease-in-out 1400ms both reverse;
 }
