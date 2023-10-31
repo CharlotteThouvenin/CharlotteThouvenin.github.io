@@ -69,14 +69,11 @@ h2{
 .fonctionnement{
     &__processus__etape__numero{
         color: #ffffff;
-        @include text-style(14px, 500px);
+        @include text-style(14px, 500);
     }
     &__processus__etape__contenu{
         i{
             color: #7E7E7E;
-        }
-        .purple{
-            color: $purple;
         }
         
         &__text{

@@ -120,16 +120,13 @@ h2 {
 .fonctionnement__processus__etape__numero {
   color: #ffffff;
   font-family: roboto, sans-serif;
-  font-weight: 500px;
+  font-weight: 500;
   font-size: 14px;
   margin: 0;
   padding: 0;
 }
 .fonctionnement__processus__etape__contenu i {
   color: #7E7E7E;
-}
-.fonctionnement__processus__etape__contenu .purple {
-  color: #9356DC;
 }
 .fonctionnement__processus__etape__contenu__text h4 {
   font-family: roboto, sans-serif;
@@ -383,7 +380,7 @@ header h1 {
 
 /** Animation menu **/
 .menu__category {
-  opacity: O;
+  opacity: 0;
   animation: appear 1s linear 0s both;
 }
 .menu__category:nth-child(1) {
@@ -542,8 +539,11 @@ header h1 {
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: 500px;
+  font-family: roboto, sans-serif;
+  font-weight: 500;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
   border: 0px transparent;
   position: relative;
   z-index: 1;
@@ -670,7 +670,7 @@ body .body-index {
   padding: 20px 34px;
 }
 .reserver-et-explorer a {
-  margin: 20px Opx;
+  margin: 20px 0px;
 }
 
 /**** Section Fontionnement ****/
@@ -740,9 +740,6 @@ body .body-index {
   width: 335px;
   height: 72.38px;
   margin-left: 10px;
-}
-.fonctionnement__processus__etape__contenu span {
-  color: #9356DC;
 }
 .fonctionnement__processus__etape__contenu i {
   background-color: inherit;

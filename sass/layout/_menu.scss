@@ -99,7 +99,7 @@
 
 .menu{
     &__category{
-        opacity:O;
+        opacity: 0;
         animation: appear 1s linear 0s both;
         &:nth-child(1){
             animation-delay: 0s;
