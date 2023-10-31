@@ -128,6 +128,9 @@ h2 {
 .fonctionnement__processus__etape__contenu i {
   color: #7E7E7E;
 }
+.fonctionnement__processus__etape__contenu .purple {
+  color: #9356DC;
+}
 .fonctionnement__processus__etape__contenu__text h4 {
   font-family: roboto, sans-serif;
   font-weight: 700;
@@ -460,15 +463,15 @@ header h1 {
   width: calc(100% - 59px);
 }
 .menu__category__plat__nom {
-  transition: width 500ms ease-in-out;
+  transition: width 400ms ease-in-out;
 }
 .menu__category__plat__prix {
   transform: translateX(0%);
-  transition: transform 500ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 .menu__category__plat__icon {
   transform: translateX(0%);
-  transition: transform 500ms ease-in-out;
+  transition: transform 400ms ease-in-out;
   display: flex;
   justify-content: center;
   width: 59px;
@@ -487,6 +490,7 @@ header h1 {
   text-shadow: 0 0 1px black;
   z-index: 1;
   color: white;
+  transition: text-shadow 100ms;
 }
 .coeur:hover {
   text-shadow: none;
@@ -513,7 +517,7 @@ header h1 {
   -webkit-text-fill-color: transparent;
   opacity: 0;
   z-index: 2;
-  animation: appear 300ms ease-in-out forwards;
+  animation: appear 400ms ease-in-out forwards;
 }
 
 .card__image__nouveau {
@@ -550,7 +554,7 @@ header h1 {
 .purple-button::after {
   content: "";
   border-radius: 25px;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5254901961);
   position: absolute;
   top: 0;
   right: 0;
@@ -736,6 +740,9 @@ body .body-index {
   width: 335px;
   height: 72.38px;
   margin-left: 10px;
+}
+.fonctionnement__processus__etape__contenu span {
+  color: #9356DC;
 }
 .fonctionnement__processus__etape__contenu i {
   background-color: inherit;

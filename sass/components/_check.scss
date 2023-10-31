@@ -17,17 +17,17 @@
                 }
 
             &__nom{
-                transition: width 500ms ease-in-out;
+                transition: width $anim-dur ease-in-out;
             }
 
             &__prix{
                 transform: translateX(0%);
-                transition: transform 500ms ease-in-out;
+                transition: transform $anim-dur ease-in-out;
                 
             }
             &__icon{
                 transform: translateX(0%);
-                transition: transform 500ms ease-in-out;
+                transition: transform $anim-dur ease-in-out;
                 display: flex;
                 justify-content: center;
                 width: 59px;

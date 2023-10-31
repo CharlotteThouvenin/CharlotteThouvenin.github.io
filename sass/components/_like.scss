@@ -5,6 +5,7 @@
     text-shadow: 0 0 1px black;
     z-index: 1;
     color: white;
+    transition: text-shadow 100ms;
         &:hover{
             text-shadow: none;
             &::after{
@@ -15,15 +16,11 @@
         &::after {
             display: none;
             @include fontawesome ("\f004");
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            @include after-position;
             @include gradientHeart;
             opacity: 0;
             z-index: 2;
-            animation: appear 300ms ease-in-out forwards;
+            animation: appear $anim-dur ease-in-out forwards;
           }
 }
 
