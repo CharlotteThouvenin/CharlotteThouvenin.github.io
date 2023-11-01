@@ -5,22 +5,25 @@
     text-shadow: 0 0 1px black;
     z-index: 1;
     color: white;
-    transition: text-shadow 100ms;
+    transition: text-shadow 400ms;
         &:hover{
             text-shadow: none;
             &::after{
-                display: block;
                 opacity:1;
             }
         }
         &::after {
-            display: none;
             @include fontawesome ("\f004");
             @include after-position;
             @include gradientHeart;
+            text-shadow: 0 0 1px transparent;
+            transform: translateY(1px);
+            display: block;
+            width: auto;
+            height: auto;
             opacity: 0;
             z-index: 2;
-            animation: appear $anim-dur ease-in-out forwards;
+            transition: opacity 400ms ease-in;
           }
 }
 

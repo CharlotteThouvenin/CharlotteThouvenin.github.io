@@ -487,17 +487,15 @@ header h1 {
   text-shadow: 0 0 1px black;
   z-index: 1;
   color: white;
-  transition: text-shadow 100ms;
+  transition: text-shadow 400ms;
 }
 .coeur:hover {
   text-shadow: none;
 }
 .coeur:hover::after {
-  display: block;
   opacity: 1;
 }
 .coeur::after {
-  display: none;
   display: none;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -512,9 +510,14 @@ header h1 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 1px transparent;
+  transform: translateY(1px);
+  display: block;
+  width: auto;
+  height: auto;
   opacity: 0;
   z-index: 2;
-  animation: appear 400ms ease-in-out forwards;
+  transition: opacity 400ms ease-in;
 }
 
 .card__image__nouveau {
@@ -539,12 +542,10 @@ header h1 {
   align-items: center;
   justify-content: center;
   color: white;
-  font-family: roboto, sans-serif;
-  font-weight: 500;
   font-size: 16px;
-  margin: 0;
-  padding: 0;
+  font-weight: 500;
   border: 0px transparent;
+  margin: 0;
   position: relative;
   z-index: 1;
 }
@@ -668,9 +669,6 @@ body .body-index {
 }
 .reserver-et-explorer p {
   padding: 20px 34px;
-}
-.reserver-et-explorer a {
-  margin: 20px 0px;
 }
 
 /**** Section Fontionnement ****/

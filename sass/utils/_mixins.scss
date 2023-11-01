@@ -23,8 +23,10 @@
     align-items: center;
     justify-content: center;
     color: white;
-    @include text-style(16px, 500);
+    font-size: 16px;
+    font-weight: 500;
     border: 0px transparent;
+    margin: 0;
 }
 
 @mixin after-position{
