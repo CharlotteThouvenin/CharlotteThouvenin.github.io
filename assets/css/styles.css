@@ -545,7 +545,6 @@ header h1 {
   font-size: 16px;
   font-weight: 500;
   border: 0px transparent;
-  margin: 0;
   position: relative;
   z-index: 1;
 }
