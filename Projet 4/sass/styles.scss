@@ -1,0 +1,34 @@
+
+
+@charset "UTF-8";
+
+// 1. utils
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/keyframes";
+
+// 2. Vendors
+
+// 3. Base stuff
+@import "./base/background";
+@import "./base/textstyle";
+
+// 4. Layout-related sections
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/menu";
+
+// 5. Components
+@import "./components/card";
+@import "./components/check";
+@import "./components/like";
+@import "./components/nouveau";
+@import "./components/submit";
+@import "./components/loader";
+
+// 6. Page-specific styles
+@import "./pages/index";
+@import "./pages/restaurants";
+
+// 7. Themes
+
